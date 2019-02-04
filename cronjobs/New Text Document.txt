@@ -1,0 +1,5 @@
+set doc=C:\xampp\htdocs\project
+cd "%doc%"
+copy /y nul "file.php"
+ECHO ^<?php echo 'This is executed via scheduler task!'; ?^> >file.php
+schtasks /create /tn "Cron" /tr "C:\Program Files (x86)\Mozilla Firefox\firefox.exe http://play.local/fisierul.php" /st minute /mo 10
